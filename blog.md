@@ -3,4 +3,4 @@ layout: page
 ---
 
 
-## this is the about
+## this is the blog
