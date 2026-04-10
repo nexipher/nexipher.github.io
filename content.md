@@ -2,5 +2,4 @@
 layout: page
 ---
 
-
-## this is the blog
+## 个人简介
