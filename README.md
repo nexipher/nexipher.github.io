@@ -55,4 +55,4 @@ bundle exec jekyll serve
 
 ## 许可
 
-本项目基于 [jekyll-now](https://github.com/barryclark/jekyll-now) 的 MIT 协议。
+感谢 barryclark 开发的 [jekyll-now](https://github.com/barryclark/jekyll-now) 项目，简化了 Jekyll + GitHub Pages 的部署流程，让个人主页搭建变得零门槛。
