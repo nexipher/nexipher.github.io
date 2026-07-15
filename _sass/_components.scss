@@ -1,0 +1,23 @@
+/**********************/
+/* COMPONENTS         */
+/**********************/
+
+// ── Skill tags (style <code> inside lists as tags) ──
+#main li code {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+// ── Emphasis / highlight inline ──
+#main strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+// ── Link card-like hover on list items ──
+#main ul li {
+  padding: 2px 0;
+  border-radius: var(--radius-sm);
+}
