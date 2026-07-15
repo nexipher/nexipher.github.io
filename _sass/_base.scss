@@ -1,0 +1,265 @@
+/**************/
+/* BASE RULES */
+/**************/
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  font: 16px/var(--line-height) $system-sans;
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 0 16px;
+  width: 100%;
+}
+
+// ── Typography ──
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $system-sans;
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 1.5em 0 0.6em;
+  padding: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include mobile {
+    line-height: 1.4;
+  }
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+  letter-spacing: -0.02em;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  margin-top: 2.5em;
+  padding-left: 14px;
+  border-left: 4px solid var(--color-primary);
+  letter-spacing: -0.01em;
+
+  &:first-of-type {
+    margin-top: 0.5em;
+  }
+
+  @include mobile {
+    font-size: 1.25rem;
+    margin-top: 2em;
+    padding-left: 10px;
+  }
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+}
+
+h4 {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  margin-top: 2em;
+}
+
+p {
+  margin: 1em 0;
+  line-height: var(--line-height);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  cursor: pointer;
+
+  &:hover, &:focus {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+ul, ol {
+  margin: 0.8em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin: 0.35em 0;
+  line-height: var(--line-height);
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ul, ul ol, ul ul, ol ol {
+  margin: 0.25em 0;
+}
+
+ul ul, ol ul {
+  list-style-type: circle;
+}
+
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+// Fixes images in popup boxes from Google Translate
+.gmnoprint img {
+  max-width: none;
+}
+
+.date {
+  font-style: italic;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+// ── Selection ──
+::-moz-selection {
+  color: var(--color-selection-text);
+  background: var(--color-selection-bg);
+}
+::selection {
+  color: var(--color-selection-text);
+  background: var(--color-selection-bg);
+}
+
+// ── Horizontal Rule ──
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-border) 20%,
+    var(--color-border) 80%,
+    transparent
+  );
+  margin: var(--spacing-2xl) 0;
+}
+
+// ── Blockquote ──
+blockquote {
+  margin: 1.5em 0;
+  padding: 0.8em 1.2em;
+  border-left: 3px solid var(--color-primary);
+  background: var(--color-bg-alt);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--color-text-secondary);
+  font-style: italic;
+
+  p {
+    margin: 0;
+  }
+
+  @include mobile {
+    margin: 1em 0;
+    padding: 0.6em 1em;
+    font-size: var(--font-size-sm);
+  }
+}
+
+// ── Code ──
+code {
+  font-family: $system-mono;
+  font-size: 0.9em;
+  background: var(--color-code-bg);
+  color: var(--color-code-text);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  background: var(--color-code-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  overflow-x: auto;
+  margin: 1.2em 0;
+  line-height: 1.6;
+
+  code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.875em;
+  }
+}
+
+// ── Tables ──
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: var(--font-size-sm);
+
+  th, td {
+    padding: 0.6em 0.8em;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+    background: var(--color-bg-alt);
+  }
+
+  tr:hover td {
+    background: var(--color-bg-alt);
+  }
+}
+
+// ── Micro clearfix ──
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
