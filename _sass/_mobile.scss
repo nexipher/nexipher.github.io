@@ -1,0 +1,37 @@
+/***********************/
+/* MOBILE ADJUSTMENTS  */
+/***********************/
+
+@include mobile {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+  }
+
+  hr {
+    margin: var(--spacing-lg) 0;
+  }
+
+  .wrapper-masthead {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .wrapper-footer footer {
+    padding: 20px 0;
+  }
+
+  ul, ol {
+    padding-left: 1.25em;
+  }
+}
