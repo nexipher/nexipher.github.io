@@ -18,7 +18,13 @@
   animation: fadeInUp 0.5s var(--transition-base) both;
 }
 
-// Staggered fade for h2 sections
-#main h2 {
-  animation: fadeInUp 0.5s var(--transition-base) both;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

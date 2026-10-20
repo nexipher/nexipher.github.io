@@ -1,5 +1,7 @@
 ---
 layout: page
+title: 致谢
+permalink: /thanks/
 ---
 
 ## 🙏 致谢

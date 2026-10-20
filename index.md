@@ -1,5 +1,7 @@
 ---
 layout: default
+title: 首页
+description: 贺杰的个人学术主页，关注大语言模型自动化漏洞利用与 AIGC 内容安全。
 ---
 
 ## 个人简介

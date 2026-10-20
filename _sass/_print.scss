@@ -26,8 +26,13 @@
     padding: 0;
   }
 
-  #main {
+  #main.container {
     animation: none;
+    width: 100%;
+    padding: 0;
+    background: #fff;
+    border: 0;
+    box-shadow: none;
   }
 
   h2 {

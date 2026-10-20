@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background: var(--color-bg);
+  background: var(--color-bg-alt);
   font: 16px/var(--line-height) $system-sans;
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
@@ -26,6 +26,7 @@ body {
 // ── Typography ──
 
 h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 160px;
   font-family: $system-sans;
   color: var(--color-text);
   font-weight: 700;
@@ -251,6 +252,26 @@ table {
   tr:hover td {
     background: var(--color-bg-alt);
   }
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 16px;
+  z-index: 200;
+  padding: 10px 16px;
+  background: var(--color-card);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  transform: translateY(-150%);
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
+#main {
+  overflow-wrap: anywhere;
 }
 
 // ── Micro clearfix ──

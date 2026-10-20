@@ -13,11 +13,7 @@
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   margin-bottom: var(--spacing-3xl);
-  transition: box-shadow var(--transition-base);
-
-  body.has-scrolled & {
-    box-shadow: var(--shadow-sm);
-  }
+  box-shadow: var(--shadow-sm);
 }
 
 .masthead {
@@ -27,10 +23,9 @@
   gap: 16px;
 
   @include mobile {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 8px 12px;
     padding: 12px 0;
   }
 }
@@ -54,8 +49,8 @@
   }
 
   @include mobile {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     margin: 0;
   }
 }
@@ -65,8 +60,7 @@
   min-width: 0;
 
   @include mobile {
-    flex: 0 0 100%;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -113,12 +107,16 @@ nav {
   gap: 4px;
 
   @include mobile {
+    grid-column: 1 / -1;
+    justify-content: center;
     gap: 0;
     margin-top: 4px;
   }
 
   a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     padding: 6px 14px;
     color: var(--color-text-secondary);
     font-size: var(--font-size-sm);
@@ -139,6 +137,12 @@ nav {
       outline-offset: -2px;
     }
 
+    &[aria-current="page"] {
+      color: var(--color-primary-dark);
+      background: var(--color-primary-light);
+      font-weight: 600;
+    }
+
     @include mobile {
       padding: 8px 12px;
       font-size: var(--font-size-sm);
@@ -149,7 +153,12 @@ nav {
 // ── Main Content ──
 
 #main {
-  padding-bottom: var(--spacing-3xl);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: clamp(20px, 5vw, 48px);
+  width: calc(100% - 32px);
 
   h3 strong, h4 strong {
     color: var(--color-primary);
@@ -171,5 +180,22 @@ nav {
   footer {
     padding: 28px 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: var(--radius-full);
+      transition: transform var(--transition-fast);
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
   }
 }

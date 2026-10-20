@@ -35,6 +35,12 @@
 ```
 _sass/
 ├── _variables.scss    # 设计变量（颜色、间距、字体、阴影、过渡）
+├── _base.scss         # 基础排版、链接、键盘访问
+├── _layout.scss       # 页头、导航、正文卡片、页脚
+├── _components.scss   # 列表与行内强调
+├── _animations.scss   # 入场动画及减少动态效果偏好
+├── _mobile.scss       # 移动端适配
+├── _print.scss        # 打印样式
 ├── _highlights.scss   # Rouge 语法高亮配色
 ├── _svg-icons.scss    # SVG 图标样式
 └── _reset.scss        # CSS Reset（未修改）
@@ -43,15 +49,17 @@ style.scss             # 主样式入口
 
 ## 本地开发
 
-需安装 Ruby 及 Jekyll：
+需安装 Ruby 及 Bundler，仓库中的 `Gemfile` 使用 GitHub Pages 依赖集：
 
 ```bash
-gem install jekyll bundler
+gem install bundler
 bundle install
 bundle exec jekyll serve
 ```
 
 或直接推送到 GitHub，由 GitHub Pages 自动构建部署。
+
+`_config.yml` 中的 `url` 为正式站点地址；若部署到子目录，需相应设置 `baseurl`。页面和资源链接会自动使用该前缀。
 
 ## 许可
 
