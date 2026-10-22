@@ -1,37 +1,37 @@
-/***********************/
-/* MOBILE ADJUSTMENTS  */
-/***********************/
-
-@include mobile {
-  body {
-    font-size: 15px;
+@media screen and (max-width: 760px) {
+  .site-shell {
+    display: block;
+    padding: 32px 24px 40px;
   }
-
-  h1 {
-    font-size: 1.5rem;
+  .wrapper-masthead { position: static; margin-bottom: 40px; }
+  .masthead {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 20px;
+    align-items: center;
   }
+  .site-avatar { width: 112px; height: 112px; margin: 0; }
+  .site-avatar img { border-radius: 16px 16px 36px 16px; }
+  .site-name { font-size: 1.65rem; }
+  .site-name span { display: inline; margin-left: 8px; font-size: 1.05rem; }
+  .site-description { margin: 10px 0 0; max-width: none; font-size: .8rem; }
+  .site-nav { grid-column: 1 / -1; padding: 0; gap: 28px; }
+  .section-nav, .profile-links { display: none; }
+  .main-content { padding: 0; }
+  .intro { margin-bottom: 36px; }
+  .intro h1 { font-size: clamp(1.8rem, 6vw, 2.3rem); }
+  .profile-section { margin-top: 36px; padding-top: 28px; }
+  .wrapper-footer { margin: 0 24px; }
+}
 
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  h3 {
-    font-size: 1.05rem;
-  }
-
-  hr {
-    margin: var(--spacing-lg) 0;
-  }
-
-  .wrapper-masthead {
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .wrapper-footer footer {
-    padding: 20px 0;
-  }
-
-  ul, ol {
-    padding-left: 1.25em;
-  }
+@media screen and (max-width: 420px) {
+  body { font-size: 15px; }
+  .site-shell { padding: 24px 20px 32px; }
+  .masthead { grid-template-columns: 96px minmax(0, 1fr); gap: 16px; }
+  .site-avatar { width: 96px; height: 96px; }
+  .site-name span { display: block; margin: 4px 0 0; }
+  .academic-table th, .academic-table td { padding: 10px 7px; font-size: .75rem; }
+  .skill-list { grid-template-columns: 64px minmax(0, 1fr); gap: 16px; }
+  .dated-list li { gap: 10px 14px; }
+  .wrapper-footer { margin: 0 20px; }
 }

@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background: var(--color-bg-alt);
+  background: var(--color-bg);
   font: 16px/var(--line-height) $system-sans;
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
@@ -26,7 +26,7 @@ body {
 // ── Typography ──
 
 h1, h2, h3, h4, h5, h6 {
-  scroll-margin-top: 160px;
+  scroll-margin-top: 28px;
   font-family: $system-sans;
   color: var(--color-text);
   font-weight: 700;
@@ -55,8 +55,8 @@ h1 {
 h2 {
   font-size: var(--font-size-2xl);
   margin-top: 2.5em;
-  padding-left: 14px;
-  border-left: 4px solid var(--color-primary);
+  font-family: $display-serif;
+  font-weight: 600;
   letter-spacing: -0.01em;
 
   &:first-of-type {
@@ -66,7 +66,6 @@ h2 {
   @include mobile {
     font-size: 1.25rem;
     margin-top: 2em;
-    padding-left: 10px;
   }
 }
 

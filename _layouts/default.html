@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 {% include head.html %}
-
-  <body>
-    <a class="skip-link" href="#main">跳转到正文</a>
-    <div class="wrapper-masthead" role="banner">
-      <div class="container">
-        <header class="masthead">
-          <a href="{{ site.baseurl }}/" class="site-avatar" aria-label="返回首页">
-            <img src="{{ site.avatar | relative_url }}" alt="{{ site.name }}的头像" width="88" height="88" />
-          </a>
-
-          <div class="site-info">
-            <div class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></div>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav aria-label="主导航">
-            <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>首页</a>
-            <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
-            <a href="{{ '/thanks/' | relative_url }}"{% if page.url == '/thanks/' %} aria-current="page"{% endif %}>Thanks</a>
-          </nav>
-        </header>
+<body>
+  <a class="skip-link" href="#main">跳转到正文</a>
+  <div class="site-shell">
+    <aside class="wrapper-masthead" aria-label="个人信息与导航">
+      <header class="masthead">
+        <a href="{{ '/' | relative_url }}" class="site-avatar" aria-label="返回首页">
+          <img src="{{ site.avatar | relative_url }}" alt="贺杰的头像" width="184" height="184" />
+        </a>
+        <div class="site-info">
+          <p class="site-name"><a href="{{ '/' | relative_url }}">贺杰 <span>Jie He</span></a></p>
+          <p class="site-description">{{ site.description | escape | replace: '信息安全', '<br />信息安全' }}</p>
+        </div>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>首页</a>
+          <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>关于</a>
+          <a href="{{ '/thanks/' | relative_url }}"{% if page.url == '/thanks/' %} aria-current="page"{% endif %}>致谢</a>
+        </nav>
+      </header>
+      {% if page.url == '/' %}
+      <nav class="section-nav" aria-label="本页目录">
+        <a href="#education">教育背景</a>
+        <a href="#research">科研与项目</a>
+        <a href="#honors">荣誉奖项</a>
+        <a href="#skills">技能清单</a>
+        <a href="#service">社会实践</a>
+        <a href="#contact">联系方式</a>
+      </nav>
+      {% endif %}
+      <div class="profile-links">
+        <a href="mailto:{{ site.footer-links.email }}">Email</a>
+        <a href="https://github.com/{{ site.footer-links.github }}">GitHub</a>
       </div>
-    </div>
-
-    <main id="main" class="container" tabindex="-1">
+    </aside>
+    <main id="main" class="main-content" tabindex="-1">
       {{ content }}
     </main>
-
-    <div class="wrapper-footer" role="contentinfo">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-  </body>
+  </div>
+  <footer class="wrapper-footer">
+    <p>贺杰的个人学术主页</p>
+    <a href="{{ '/' | relative_url }}">{{ site.name | escape }}</a>
+  </footer>
+</body>
 </html>

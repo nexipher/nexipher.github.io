@@ -1,28 +1,6 @@
-/***********************/
-/* ANIMATIONS          */
-/***********************/
-
-// Fade-in on page load
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#main {
-  animation: fadeInUp 0.5s var(--transition-base) both;
-}
-
+// Motion follows interaction; the reading surface stays still.
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
