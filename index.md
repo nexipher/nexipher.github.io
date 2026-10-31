@@ -70,6 +70,7 @@ description: 贺杰的个人学术主页，关注大语言模型自动化漏洞�
   <h2 id="service-title">社会实践与志愿服务</h2>
   <ul class="dated-list">
     <li><span>第八届新污染物环境健康风险及防控学术会议志愿者</span><time datetime="2026-09">2026.09</time></li>
+    <li><div><span>参加“一日·一生：换位劳动中的社会体察与青年实践”</span><span class="award-result">获2026年上海交通大学学生暑期社会实践优秀项目一等奖</span></div><time datetime="2026-07">2026.07</time></li>
     <li><span>春运志愿者（上海南站）</span><time datetime="2025-01">2025.01</time></li>
     <li><span>中国国际大学生创新大赛志愿者</span><time datetime="2024-10">2024.10</time></li>
     <li><span>陆家嘴地铁站志愿者</span><time datetime="2024-10">2024.10</time></li>
